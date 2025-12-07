@@ -206,6 +206,50 @@ export const CHAINRECOVENANT_ABI = [
     ],
     "name": "AgreementActivated",
     "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_agreementId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_partyIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "getParty",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "wallet",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "hasSigned",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "depositAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "hasWithdrawn",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   }
 ] as const;
 
