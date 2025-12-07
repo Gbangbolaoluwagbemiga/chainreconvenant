@@ -36,9 +36,24 @@ touch .env  # Linux/Mac
 ```
 
 2. Add the following to your `.env` file:
-   - Your private key (from MetaMask)
-   - RPC URLs (get free from Infura/Alchemy)
-   - API keys (optional for verification)
+```env
+# RPC URLs - Get from Infura, Alchemy, or QuickNode
+SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID
+ETHEREUM_RPC_URL=https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID
+
+# Private Key (DO NOT SHARE OR COMMIT!)
+# Export from MetaMask: Account Details > Export Private Key
+PRIVATE_KEY=your_private_key_without_0x_prefix
+
+# Etherscan API Key (for contract verification)
+ETHERSCAN_API_KEY=your_etherscan_api_key
+
+# Optional: Gas reporting
+COINMARKETCAP_API_KEY=your_coinmarketcap_api_key
+REPORT_GAS=false
+```
+
+**⚠️ IMPORTANT**: Never commit your `.env` file or share your private key!
 
 ## Step 4: Compile Contracts
 

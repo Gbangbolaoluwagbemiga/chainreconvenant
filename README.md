@@ -240,24 +240,6 @@ npx hardhat test
 npx hardhat coverage
 ```
 
-## Auto-Push Script
-
-This repository includes an automated GitHub push script (`auto-push.ps1`) that commits and pushes changes every 2 minutes.
-
-### Running the Auto-Push Script
-
-```powershell
-# Run in PowerShell
-.\auto-push.ps1
-```
-
-The script will:
-- Check for changes every 2 minutes
-- Automatically stage all changes
-- Commit with timestamp
-- Push to GitHub
-- Continue until manually stopped (Ctrl+C)
-
 ## License
 
 MIT License - See LICENSE file for details
