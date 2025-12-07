@@ -28,16 +28,14 @@ This will install:
 
 ## Step 3: Setup Environment
 
-1. Copy the environment template:
+1. Create a `.env` file in the project root:
 ```bash
-# Windows
-copy ENVIRONMENT_TEMPLATE.txt .env
-
-# Linux/Mac
-cp ENVIRONMENT_TEMPLATE.txt .env
+# Create .env file
+touch .env  # Linux/Mac
+# or just create it manually in Windows
 ```
 
-2. Edit `.env` and add:
+2. Add the following to your `.env` file:
    - Your private key (from MetaMask)
    - RPC URLs (get free from Infura/Alchemy)
    - API keys (optional for verification)
