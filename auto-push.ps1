@@ -2,7 +2,6 @@
 # ChainReCovenant - Automated Git Push Script
 
 $repoPath = "."
-$commitMessage = "Auto-update: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 
 Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host "ChainReCovenant Auto-Push Script" -ForegroundColor Cyan
@@ -29,15 +28,15 @@ function Push-ToGitHub {
             
             # Add all changes
             git add .
-            Write-Host "  ✓ Files staged" -ForegroundColor Gray
+            Write-Host "  [OK] Files staged" -ForegroundColor Gray
             
             # Commit changes
             git commit -m $message
-            Write-Host "  ✓ Changes committed: $message" -ForegroundColor Gray
+            Write-Host "  [OK] Changes committed: $message" -ForegroundColor Gray
             
             # Push to remote
             git push origin main
-            Write-Host "  ✓ Successfully pushed to GitHub!" -ForegroundColor Green
+            Write-Host "  [OK] Successfully pushed to GitHub!" -ForegroundColor Green
             Write-Host ""
         }
         else {
@@ -66,4 +65,3 @@ while ($true) {
     
     $counter++
 }
-
