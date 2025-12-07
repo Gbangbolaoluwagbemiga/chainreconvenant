@@ -1,24 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack: (config, { isServer }) => {
-    // Exclude test files and unnecessary node_modules from bundling
-    config.module = config.module || {};
-    config.module.rules = config.module.rules || [];
-    
-    config.module.rules.push({
-      test: /node_modules\/thread-stream\/(test|bench)/,
-      use: 'ignore-loader',
-    });
-
-    return config;
-  },
-  // Suppress warnings from WalletConnect/Reown dependencies
+  // Enable Turbopack (Next.js 16 default)
+  turbopack: {},
+  
+  // TypeScript config
   typescript: {
     ignoreBuildErrors: false,
-  },
-  eslint: {
-    ignoreDuringBuilds: false,
   },
 };
 
