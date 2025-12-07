@@ -43,6 +43,20 @@ module.exports = {
       url: process.env.BSC_RPC_URL || "https://bsc-dataseed.binance.org",
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 56
+    },
+    // Base Mainnet
+    base: {
+      url: process.env.BASE_RPC_URL || "https://mainnet.base.org",
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      chainId: 8453,
+      gasPrice: "auto"
+    },
+    // Base Sepolia Testnet
+    baseSepolia: {
+      url: process.env.BASE_SEPOLIA_RPC_URL || "https://sepolia.base.org",
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      chainId: 84532,
+      gasPrice: "auto"
     }
   },
   etherscan: {
@@ -51,8 +65,28 @@ module.exports = {
       sepolia: process.env.ETHERSCAN_API_KEY || "",
       goerli: process.env.ETHERSCAN_API_KEY || "",
       polygon: process.env.POLYGONSCAN_API_KEY || "",
-      bsc: process.env.BSCSCAN_API_KEY || ""
-    }
+      bsc: process.env.BSCSCAN_API_KEY || "",
+      base: process.env.BASESCAN_API_KEY || "",
+      baseSepolia: process.env.BASESCAN_API_KEY || ""
+    },
+    customChains: [
+      {
+        network: "base",
+        chainId: 8453,
+        urls: {
+          apiURL: "https://api.basescan.org/api",
+          browserURL: "https://basescan.org"
+        }
+      },
+      {
+        network: "baseSepolia",
+        chainId: 84532,
+        urls: {
+          apiURL: "https://api-sepolia.basescan.org/api",
+          browserURL: "https://sepolia.basescan.org"
+        }
+      }
+    ]
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS === "true",
